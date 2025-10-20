@@ -155,13 +155,13 @@ export type HeaderNavProps = { isActive: boolean; nav: { href: string; key: stri
 
 // SOCIAL ----------------------------------------------------------------------------------------------------------------------------------
 export function HeaderSocial({ social }: HeaderSocialProps) {
-  const { href, icon, key } = social;
+  const { href, icon, key, text } = social;
   const isHovered = useStore(store, ({ headerHoveredId }) => headerHoveredId === key);
 
   const handleOnMouseEnter = useCallback(() => setHeaderHoveredId(key), [key]);
 
   return (
-    <a className={HEADER.social()} href={href} key={key} onMouseEnter={handleOnMouseEnter}>
+    <a aria-label={text} className={HEADER.social()} href={href} key={key} onMouseEnter={handleOnMouseEnter}>
       {isHovered && <motion.div className={HEADER.stain({ intent: "primary" })} layoutId="hovered" />}
       <span className={HEADER.stainContent()}>
         <span className={HEADER.icon({ className: icon })} />

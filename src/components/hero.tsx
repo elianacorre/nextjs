@@ -44,7 +44,7 @@ export function Hero({ button, children, className: C = {}, image, title }: Hero
           {...image}
           // breakpoints={[406, 576, 724, 812, 1152, 1340, 1448, 1624]}
           className={HERO.img()}
-          priority
+          priority={true}
           sizes="(min-width: 1536px) 724px, (min-width: 1280px) 612px, (min-width: 1024px) 406px, (min-width: 768px) 670px, (min-width: 640px) 576px, 100vw"
         />
       </aside>
