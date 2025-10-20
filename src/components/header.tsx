@@ -74,6 +74,7 @@ export function Header({ image, navs, socials }: HeaderProps) {
           <HeaderLogo>
             <Image
               {...image}
+              placeholder="empty"
               // background="transparent"
               // breakpoints={[80, 96, 160, 192, 320]}
               sizes="(min-width: 768px) 160px, (min-width: 640px) 96px, 80px"
