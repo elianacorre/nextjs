@@ -1,4 +1,4 @@
-import { blurhashToCssGradients } from "@unpic/placeholder";
+import { blurhashToCssGradientString } from "@unpic/placeholder";
 
 export const allImages = [
   {
@@ -369,7 +369,7 @@ export const allImages = [
 export const imageFrom = ({ alt, blurhash, height, src, width }: Images["Entry"]) => ({
   alt,
   // blurDataURL: blurhashToDataUri(blurhash),
-  background: blurhashToCssGradients(blurhash),
+  background: blurhashToCssGradientString(blurhash),
   height,
   // placeholder: "blur" as PlaceholderValue,
   src: `${src}?q=50`,
