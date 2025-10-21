@@ -1,6 +1,7 @@
 import { readImageBySlug } from "./images";
 import { readAllSets } from "./sets";
 
+// ROOT ------------------------------------------------------------------------------------------------------------------------------------
 export const readRootLayout = () => ({
   logoImg: readImageBySlug("logo"),
   navs: [
@@ -14,11 +15,12 @@ export const readRootLayout = () => ({
   ],
 });
 
+// WORKS -----------------------------------------------------------------------------------------------------------------------------------
 export const readWorksLayout = () => ({
   hero: {
     content:
       "Vous retrouverez ici toutes les œuvres que j’ai réalisées. Si l’une d’entre elles résonne avec vous, n’hésitez pas à me contacter.",
-    image: readImageBySlug("la-reveuse"),
+    image: readImageBySlug("mes-oeuvres"),
     title: ["Découvrez", "mes œuvres"],
   },
   sets: readAllSets(),

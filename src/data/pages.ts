@@ -4,7 +4,7 @@ import { allWorks, readLastWorks, workFrom } from "./works";
 // ABOUT -----------------------------------------------------------------------------------------------------------------------------------
 export const readAboutPage = () => [
   {
-    img: readImageBySlug("mon-parcours"),
+    img: readImageBySlug("decouvrez-mon-parcours"),
     slug: "decouvrez-mon-parcours",
     title: ["Découvrez", "mon parcours"],
     content: `Je grandis à l’île de la Réunion, en quête de sens et un peu désoeuvrée face à un monde que j'ai du mal à comprendre, je me

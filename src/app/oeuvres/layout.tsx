@@ -4,8 +4,7 @@ import { WorksLayoutSets } from "./layout.sets";
 
 // ROOT ------------------------------------------------------------------------------------------------------------------------------------
 export default function WorksLayout({ children }: LayoutProps<"/oeuvres">) {
-  const { hero, ...data } = readWorksLayout();
-  const sets = data.sets.map((set) => ({ ...set, image: { ...set.image, src: `${set.image.src}&ar=1&fit=crop` } }));
+  const { hero, sets } = readWorksLayout();
 
   return (
     <>

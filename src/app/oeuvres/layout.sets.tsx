@@ -52,19 +52,24 @@ export function WorksLayoutSets({ sets }: WorksLayoutSetsProps) {
     activeSet && (
       <Section className={{ container: WORKS.base() }} intent="secondary">
         <aside className={WORKS.aside()}>
-          {sets.map((set, i) => (
-            <figure
-              className={WORKS.figure({ active: i === activeIndex })}
-              key={set.slug}
-              style={{ rotate: `${((i - activeIndex) * 45) / count}deg` }}
-            >
-              <Image
-                {...set.image}
-                className={WORKS.image()}
-                sizes="(min-width: 1536px) 448px, (min-width: 1280px) 384px, (min-width: 1024px) 320px, 1px"
-              />
-            </figure>
-          ))}
+          {sets.map((set, i) => {
+            const { height: _, ...r } = set.image;
+            return (
+              <figure
+                className={WORKS.figure({ active: i === activeIndex })}
+                key={set.slug}
+                style={{ rotate: `${((i - activeIndex) * 45) / count}deg` }}
+              >
+                <Image
+                  {...r}
+                  aspectRatio={1}
+                  className={WORKS.image()}
+                  operations={{ imagekit: { f: "avif" } }}
+                  sizes="(min-width: 1536px) 448px, (min-width: 1280px) 384px, (min-width: 1024px) 320px, 1px"
+                />
+              </figure>
+            );
+          })}
         </aside>
         <SectionMain className={WORKS.main()}>
           <div className={WORKS.description()} key={activeSet.slug}>
