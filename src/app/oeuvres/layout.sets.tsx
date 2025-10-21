@@ -2,11 +2,10 @@
 "use client";
 
 import { Image } from "@unpic/react";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";
 import { tv } from "tailwind-variants";
-import { ButtonAnimated } from "@/components/button-animated";
+import { BtnLink } from "@/components/btn";
 import { Section, SectionContent, SectionMain, SectionTitle } from "@/components/section";
 import type { Sets } from "@/data/sets";
 
@@ -77,12 +76,12 @@ export function WorksLayoutSets({ sets }: WorksLayoutSetsProps) {
             <SectionContent>{activeSet.content}</SectionContent>
           </div>
           <div className={WORKS.nav()}>
-            <ButtonAnimated icon="icon-lucide--chevron-left" intent="secondary" reverse>
-              <Link href={previousLink}>Précédente</Link>
-            </ButtonAnimated>
-            <ButtonAnimated intent="secondary">
-              <Link href={nextLink}>Suivante</Link>
-            </ButtonAnimated>
+            <BtnLink href={previousLink} icon="icon-lucide--chevron-left" intent="secondary" reverse>
+              Précédente
+            </BtnLink>
+            <BtnLink href={nextLink} intent="secondary">
+              Suivante
+            </BtnLink>
           </div>
         </SectionMain>
       </Section>

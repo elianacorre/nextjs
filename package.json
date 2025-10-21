@@ -12,6 +12,7 @@
   "dependencies": {
     "@iconify/json": "^2.2.398",
     "@iconify/tailwind4": "^1.0.6",
+    "@radix-ui/react-slot": "^1.2.3",
     "@tanstack/react-store": "^0.8.0",
     "@unpic/placeholder": "^0.1.2",
     "@unpic/react": "^1.0.1",

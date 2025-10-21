@@ -1,15 +1,14 @@
 /** biome-ignore-all lint/style/noMagicNumbers: off */
 import { Image } from "@unpic/react";
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Images } from "@/data/images";
-import { ButtonAnimated } from "./button-animated";
 
 // STYLES ----------------------------------------------------------------------------------------------------------------------------------
 const heroStyles = tv({
   slots: {
     aside:
-      "lg:-mr-20 relative hidden aspect-square w-full flex-none rounded-2xl border-[12px] border-white bg-neutral-200 shadow-2xl outline-1 outline-neutral-200 md:border-[16px] lg:flex lg:w-md lg:rotate-6 lg:transition-transform lg:hover:rotate-8 xl:mr-0 xl:w-xl 2xl:w-2xl",
+      "lg:-mr-20 relative hidden aspect-square w-full flex-none rounded-2xl border-12 border-white bg-neutral-200 shadow-2xl outline-1 outline-neutral-200 md:border-16 lg:flex lg:w-md lg:rotate-6 lg:transition-transform lg:hover:rotate-8 xl:mr-0 xl:w-xl 2xl:w-2xl",
     base: "container relative z-10 mx-auto flex flex-col items-center gap-8 px-4 py-8 sm:px-8 lg:flex-row lg:items-start xl:items-center",
     content: "text-balance text-center font-light text-lg sm:text-xl lg:text-start 2xl:text-2xl",
     img: "size-full object-cover",
@@ -24,7 +23,7 @@ const heroStyles = tv({
 const HERO = heroStyles();
 
 // ROOT ------------------------------------------------------------------------------------------------------------------------------------
-export function Hero({ button, children, className: C = {}, image, title }: HeroProps) {
+export function Hero({ children, className: C = {}, image, title }: HeroProps) {
   const { height: _, ...r } = image;
   return (
     <section className={HERO.base({ className: C.base })}>
@@ -36,8 +35,7 @@ export function Hero({ button, children, className: C = {}, image, title }: Hero
             <div className={HERO.titleRowCursor({ className: C.titleRowCursor })} />
           </div>
         </h1>
-        <div className={HERO.content({ className: C.content })}>{children}</div>
-        {button && <ButtonAnimated>{button}</ButtonAnimated>}
+        {children}
       </main>
       <aside className={HERO.aside({ className: C.aside })}>
         <Image
@@ -53,8 +51,13 @@ export function Hero({ button, children, className: C = {}, image, title }: Hero
     </section>
   );
 }
-type HeroProps = Omit<ComponentProps<"section">, "className" | "title"> &
-  HeroStyles & { button?: ReactNode; image: Images["Entity"]; title: string[] };
+type HeroProps = Omit<ComponentProps<"section">, "className" | "title"> & HeroStyles & { image: Images["Entity"]; title: string[] };
+
+// CONTENT ---------------------------------------------------------------------------------------------------------------------------------
+export function HeroContent({ children, className }: HeroContentProps) {
+  return <div className={HERO.content({ className })}>{children}</div>;
+}
+type HeroContentProps = ComponentProps<"div">;
 
 // TYPES -----------------------------------------------------------------------------------------------------------------------------------
 type HeroClass = Partial<(typeof heroStyles)["slots"]>;

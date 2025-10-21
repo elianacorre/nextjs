@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { tv } from "tailwind-variants";
+import { BtnLink } from "@/components/btn";
 import { GridBackground } from "@/components/grid-background";
-import { Hero } from "@/components/hero";
+import { Hero, HeroContent } from "@/components/hero";
 import { Section, SectionContent, SectionImage, SectionMain, SectionTitle } from "@/components/section";
 import { WorksGrid } from "@/components/works-grid";
 import { readIndexPage } from "@/data/pages";
@@ -31,8 +31,9 @@ export default function HomePage() {
 
   return (
     <>
-      <Hero button={<Link href="/#contact">{hero.button}</Link>} className={{ aside: "flex" }} image={hero.image} title={hero.title}>
-        {hero.content}
+      <Hero className={{ aside: "flex" }} image={hero.image} title={hero.title}>
+        <HeroContent>{hero.content}</HeroContent>
+        <BtnLink href="/#contact">{hero.button}</BtnLink>
       </Hero>
       <Section className={{ base: "lg:-mt-20" }} intent="secondary">
         <SectionMain>

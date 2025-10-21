@@ -1,4 +1,4 @@
-import { Hero } from "@/components/hero";
+import { Hero, HeroContent } from "@/components/hero";
 import { readWorksLayout } from "@/data/layouts";
 import { WorksLayoutSets } from "./layout.sets";
 
@@ -9,7 +9,7 @@ export default function WorksLayout({ children }: LayoutProps<"/oeuvres">) {
   return (
     <>
       <Hero image={hero.image} title={hero.title}>
-        {hero.content}
+        <HeroContent>{hero.content}</HeroContent>
       </Hero>
       <WorksLayoutSets sets={sets} />
       {children}
