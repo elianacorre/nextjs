@@ -1,5 +1,4 @@
-import { blurhashToDataUri } from "@unpic/placeholder";
-import type { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
+import { blurhashToCssGradients } from "@unpic/placeholder";
 
 export const allImages = [
   {
@@ -369,9 +368,10 @@ export const allImages = [
 
 export const imageFrom = ({ alt, blurhash, height, src, width }: Images["Entry"]) => ({
   alt,
-  blurDataURL: blurhashToDataUri(blurhash),
+  // blurDataURL: blurhashToDataUri(blurhash),
+  background: blurhashToCssGradients(blurhash),
   height,
-  placeholder: "blur" as PlaceholderValue,
+  // placeholder: "blur" as PlaceholderValue,
   src: `${src}?q=50`,
   width,
 });

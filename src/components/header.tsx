@@ -2,8 +2,8 @@
 "use client";
 
 import { useStore } from "@tanstack/react-store";
+import { Image } from "@unpic/react";
 import { motion, type Transition, useMotionValueEvent, useScroll } from "motion/react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { type PropsWithChildren, useCallback } from "react";
@@ -74,9 +74,8 @@ export function Header({ image, navs, socials }: HeaderProps) {
           <HeaderLogo>
             <Image
               {...image}
-              placeholder="empty"
-              // background="transparent"
-              // breakpoints={[80, 96, 160, 192, 320]}
+              background="transparent"
+              breakpoints={[80, 96, 160, 192, 320]}
               sizes="(min-width: 768px) 160px, (min-width: 640px) 96px, 80px"
             />
           </HeaderLogo>

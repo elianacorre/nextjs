@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/style/noMagicNumbers: off */
 "use client";
 
-import Image from "next/image";
+import { Image } from "@unpic/react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";

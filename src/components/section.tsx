@@ -1,5 +1,5 @@
+import { Image } from "@unpic/react";
 import type { Transition } from "motion/react";
-import Image from "next/image";
 import type { ComponentProps, PropsWithChildren } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Images } from "@/data/images";

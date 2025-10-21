@@ -1,5 +1,5 @@
 /** biome-ignore-all lint/style/noMagicNumbers: off */
-import Image from "next/image";
+import { Image } from "@unpic/react";
 import type { ComponentProps, ReactNode } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Images } from "@/data/images";
@@ -42,7 +42,7 @@ export function Hero({ button, children, className: C = {}, image, title }: Hero
       <aside className={HERO.aside({ className: C.aside })}>
         <Image
           {...image}
-          // breakpoints={[406, 576, 724, 812, 1152, 1340, 1448, 1624]}
+          breakpoints={[406, 576, 724, 812, 1152, 1340, 1448, 1624]}
           className={HERO.img()}
           priority={true}
           sizes="(min-width: 1536px) 724px, (min-width: 1280px) 612px, (min-width: 1024px) 406px, (min-width: 768px) 670px, (min-width: 640px) 576px, 100vw"

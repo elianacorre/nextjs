@@ -14,6 +14,7 @@
     "@iconify/tailwind4": "^1.0.6",
     "@tanstack/react-store": "^0.8.0",
     "@unpic/placeholder": "^0.1.2",
+    "@unpic/react": "^1.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.546.0",

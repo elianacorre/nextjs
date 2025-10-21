@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/style/noMagicNumbers: off */
 // import { default as Zoom } from "react-medium-image-zoom";
 // import "react-medium-image-zoom/dist/styles.css";
-import Image from "next/image";
+import { Image } from "@unpic/react";
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Works } from "@/data/works";
 
@@ -30,7 +30,7 @@ export function WorksGrid({ className: C = {}, works }: WorksGridProps) {
           {/* <Zoom zoomImg={{ ...work.image, sizes: "100vw" }}> */}
           <Image
             {...work.image}
-            // breakpoints={[300, 384, 470, 600, 768, 940]}
+            breakpoints={[300, 384, 470, 600, 768, 940]}
             className={WORKS_GRID.img({ className: C.img })}
             sizes="(min-width: 1536px) 470px, (min-width: 1280px) 384px, (min-width: 1024px) 300px, (min-width: 768px) 336px, (min-width: 640px) 272px, 100vw"
           />
