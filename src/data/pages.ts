@@ -1,6 +1,7 @@
 import { readImageBySlug } from "./images";
 import { allWorks, readLastWorks, workFrom } from "./works";
 
+// ABOUT -----------------------------------------------------------------------------------------------------------------------------------
 export const readAboutPage = () => [
   {
     img: readImageBySlug("mon-parcours"),
@@ -33,16 +34,17 @@ export const readAboutPage = () => [
   },
 ];
 
+// INDEX -----------------------------------------------------------------------------------------------------------------------------------
 export const readIndexPage = () => ({
   contact: {
     content: "N’hésitez pas à m’écrire pour tout complément d’information. Je répondrai dans les plus brefs délais.",
-    image: readImageBySlug("beaute-i"),
+    image: readImageBySlug("contact"),
     title: ["Vous souhaitez", "me contacter ?"],
   },
   hero: {
     button: "Me contacter",
     content: "Je vous aide à retrouver le calme intérieur et à exprimer votre créativité sans jugement à travers l’art et le yoga.",
-    image: readImageBySlug("mes-inspirations-et-mes-techniques"),
+    image: readImageBySlug("accueil"),
     title: ["Bienvenue!", "Je suis Eliana"],
   },
   quote: {
@@ -56,4 +58,5 @@ export const readIndexPage = () => ({
   },
 });
 
+// WORKS SET -------------------------------------------------------------------------------------------------------------------------------
 export const readWorksSetPage = (slug: string) => allWorks.map(workFrom).filter((work) => work.set.slug === slug);

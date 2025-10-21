@@ -97,12 +97,14 @@ type SectionContentProps = PropsWithChildren<ComponentProps<"p"> & SectionVarian
 
 // IMAGE -----------------------------------------------------------------------------------------------------------------------------------
 export function SectionImage({ className: C = {}, image, intent, reverse = false, ...props }: SectionImageProps) {
-  image.src += "&ar=1&fit=crop";
+  const { height: _, ...r } = image;
   return (
     <figure {...props} className={SECTION.figure({ intent, reverse, className: C.figure })}>
       <Image
-        {...image}
+        {...r}
+        aspectRatio={1}
         className={SECTION.image({ intent, reverse, className: C.image })}
+        operations={{ imagekit: { f: "avif" } }}
         sizes="(min-width: 1536px) 724px, (min-width: 1280px) 612px, (min-width: 1024px) 406px, (min-width: 768px) 670px, (min-width: 640px) 576px, 100vw"
       />
     </figure>

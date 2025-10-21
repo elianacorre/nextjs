@@ -25,7 +25,7 @@ const HERO = heroStyles();
 
 // ROOT ------------------------------------------------------------------------------------------------------------------------------------
 export function Hero({ button, children, className: C = {}, image, title }: HeroProps) {
-  image.src += "&ar=1&fit=crop";
+  const { height: _, ...r } = image;
   return (
     <section className={HERO.base({ className: C.base })}>
       <main className={HERO.main({ className: C.main })}>
@@ -41,9 +41,11 @@ export function Hero({ button, children, className: C = {}, image, title }: Hero
       </main>
       <aside className={HERO.aside({ className: C.aside })}>
         <Image
-          {...image}
+          {...r}
+          aspectRatio={1}
           breakpoints={[406, 576, 724, 812, 1152, 1340, 1448, 1624]}
           className={HERO.img()}
+          operations={{ imagekit: { f: "avif" } }}
           priority={true}
           sizes="(min-width: 1536px) 724px, (min-width: 1280px) 612px, (min-width: 1024px) 406px, (min-width: 768px) 670px, (min-width: 640px) 576px, 100vw"
         />
